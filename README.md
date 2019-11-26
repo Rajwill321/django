@@ -2,11 +2,11 @@
 
 For now I have kepy:
 
-(env) ubuntu@ip-172-31-5-30:~/django$ egrep '^DEBUG|^ALLOW' mysite/settings.py
+```(env) ubuntu@ip-172-31-5-30:~/django$ egrep '^DEBUG|^ALLOW' mysite/settings.py
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 (env) ubuntu@ip-172-31-5-30:~/django$
-
+```
 
 As you can verify how the site works in all ways, later in production this has to be single IP allowed, and DEBUG is False.
 
