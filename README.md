@@ -19,14 +19,19 @@ Load the below URL:
 ### http://ec2-13-126-207-57.ap-south-1.compute.amazonaws.com:8000/polls/
 =======================================================================
 
-nginx is used to render this page as a webserver.
-Gunicorn is used to interact with Django application in helping starting and stopping the application server
+## It uses below addons to render as webserver and startups
+
+### NGINX -> serves as weserver engine
+
+### GUNICORN -> used to interact with Django application in helping starting and stopping the application server
+
+### SUPERVISOR -> Supervisor package 'supervisorctl' is used to start and stop GUNICORN
+
 
 It internally uses below command:
 
 gunicorn --bind 0.0.0.0:8000 mysite.wsgi:application
 
-Supervisor package 'supervisorctl' is used to start and stop it.
 Static files are also rendered by nginx
 
 
