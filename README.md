@@ -16,16 +16,16 @@ As you can verify how the site works in all ways, later in production this has t
 
 Load the below URL:
 
-### http://ec2-13-126-207-57.ap-south-1.compute.amazonaws.com:8000/polls/
+#### http://ec2-13-126-207-57.ap-south-1.compute.amazonaws.com:8000/polls/
 =======================================================================
 
 ## It uses below addons to render as webserver and startups
 
-### NGINX -> serves as weserver engine
+##### NGINX -> serves as weserver engine
 
-### GUNICORN -> used to interact with Django application in helping starting and stopping the application server
+##### GUNICORN -> used to interact with Django application in helping starting and stopping the application server
 
-### SUPERVISOR -> Supervisor package 'supervisorctl' is used to start and stop GUNICORN
+##### SUPERVISOR -> Supervisor package 'supervisorctl' is used to start and stop GUNICORN
 
 
 It internally uses below command:
