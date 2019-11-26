@@ -12,11 +12,11 @@ ALLOWED_HOSTS = ["*"]
 As you can verify how the site works in all ways, later in production this has to be single IP allowed, and DEBUG is False.
 
 
-# This site is running on AWS EC2 instance (free tier)
+## This site is running on AWS EC2 instance (free tier)
 
 Load the below URL:
 
-# http://ec2-13-126-207-57.ap-south-1.compute.amazonaws.com:8000/polls/
+### http://ec2-13-126-207-57.ap-south-1.compute.amazonaws.com:8000/polls/
 =======================================================================
 
 nginx is used to render this page as a webserver.
@@ -30,9 +30,9 @@ Supervisor package 'supervisorctl' is used to start and stop it.
 Static files are also rendered by nginx
 
 
-# Below are the configurations:
+## Below are the configurations:
 
-======================================================
+```
 (env) ubuntu@ip-172-31-5-30:~/django$ cat /etc/supervisor/conf.d/gunicorn.conf
 [program:gunicorn]
 directory=/home/ubuntu/django
@@ -44,21 +44,24 @@ stdout_logfile=/var/log/gunicorn/gunicorn.out.logA <=== Standard output also log
 
 [group:guni]
 programs:gunicorn
-
-==========================================================
 (env) ubuntu@ip-172-31-5-30:~/django$
 
+```
+
+Process running OK
+
+```
 (env) ubuntu@ip-172-31-5-30:~/django$ sudo supervisorctl status
 guni:gunicorn                    RUNNING   pid 1713, uptime 0:29:37 <==== gunicorn runnins
 (env) ubuntu@ip-172-31-5-30:~/django$ 
+```
 
 
-===========================================================================
 
 
-# nginx config:
+## nginx config:
 
-==============================================================================
+```
 (env) ubuntu@ip-172-31-5-30:~/django$ cat /etc/nginx/sites-available/django.conf
 server {
     listen 8000;
@@ -75,10 +78,6 @@ server {
 }
 (env) ubuntu@ip-172-31-5-30:~/django$ 
 
-===============================================================================
-
-
-
-nginx static files:
+```
 
 
